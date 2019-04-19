@@ -7,6 +7,7 @@ import { orderstatus } from '../Classes/order_class';
 })
 export class OrdermanagementService {
   private order_url="http://localhost:3000/empvieworder/";
+  private get_order_url="http://localhost:3000/order/";
   private my_work_url="http://localhost:3000/empviewwork/";
   private get_delievery_boy="http://localhost:3000/empgetdelieveryboy/";
   private bill_details_url='http://localhost:3000/orderDetail/';
@@ -14,7 +15,7 @@ export class OrdermanagementService {
 
   getAllOrder()
   {
-    return this._http.get(this.order_url);
+    return this._http.get(this.get_order_url);
   }
   getBillDetails(order_id)
   {

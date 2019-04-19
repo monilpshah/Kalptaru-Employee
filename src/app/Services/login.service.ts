@@ -7,7 +7,8 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 })
 export class LoginService {
 
-  private login_url='http://localhost:3000/emplogin/';
+  // private login_url='http://localhost:3000/emplogin/';
+  private login_url='https://godaddyapi.herokuapp.com/emplogin/';
 
 
   constructor(private _http:HttpClient) { }

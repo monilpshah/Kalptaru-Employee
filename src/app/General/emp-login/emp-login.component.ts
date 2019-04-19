@@ -20,10 +20,9 @@ export class EmpLoginComponent implements OnInit {
     this._loginser.getLogin(new Login(this.employee_email, this.employee_password)).subscribe(
       (data: Login[]) => {
 
-
+        console.log(data);
         if (data.length == 1)
         {
-
           localStorage.setItem("email", this.employee_email);
 
           if (data[0].employee_designation == "Manager")
