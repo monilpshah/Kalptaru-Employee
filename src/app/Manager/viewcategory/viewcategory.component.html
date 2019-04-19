@@ -1,0 +1,42 @@
+<h1 style="text-align: center">Category Managment</h1>
+<div class="example-button-row">
+    <button (click)="CategoryPage()"  mat-raised-button color="primary" ><mat-icon>add</mat-icon> ADD CATEGORY</button>
+  <!-- </div> -->
+<br>
+<br>
+
+<div class="container">
+<!-- <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+   -->
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+
+      <ng-container matColumnDef="Category_Id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Category Id </th>
+        <td mat-cell *matCellDef="let element"> {{element.category_id}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Category_Name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Category Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.category_name}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="Action">
+          <th mat-header-cell *matHeaderCellDef>Action </th>
+          <td mat-cell *matCellDef="let element">
+              <button (click)="UpdateCategory(element)" mat-raised-button color="primary"><mat-icon>update</mat-icon>UPDATE</button>&nbsp;&nbsp;&nbsp;
+              <button (click)="DeleteCategory(element)" mat-raised-button color="primary"><mat-icon>delete</mat-icon>Delete</button>
+          </td>
+        </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let element; columns: displayedColumns;">
+      </tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[3,5,10]"></mat-paginator>
+    <!-- <mat-paginator [pageSizeOptions]="[3,5,10]"></mat-paginator> -->
+  </div>
+</div>
